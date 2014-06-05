@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuracao-grappa>
+	<padrao>SAIDA</padrao><!--1 -->
+	<pino-inicial>0</pino-inicial><!--2 -->
+	<pino-final>3</pino-final><!--3 -->
+	<pinos>
+		<pino><!--4 -->
+			<posicao>2</posicao>
+			<tipo>ENTRADA</tipo>
+		</pino>
+	</pinos>
+	<pacote-servico>br.com.caelum.grappaExemplo.servico</pacote-servico><!--5 -->
+</configuracao-grappa>
