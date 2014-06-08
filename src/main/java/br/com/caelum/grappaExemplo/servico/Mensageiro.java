@@ -10,10 +10,10 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import org.gunisalvo.grappa.registradores.RegistradorListener;
-import org.gunisalvo.grappa.registradores.ServicoRegistrador;
+import org.entrementes.grappa.registradores.ObservadorRegistrador;
+import org.entrementes.grappa.registradores.ServicoRegistrador;
 
-@RegistradorListener(endereco = 1)// 2
+@ObservadorRegistrador(endereco = 1)// 2
 public class Mensageiro implements ServicoRegistrador { // 3
 
 	private final String USUARIO_GMAIL = "seuUsuario";
