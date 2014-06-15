@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.caelum</groupId>
 	<artifactId>grappaExemplo</artifactId>
-	<version>0.5.3-alpha</version>
+	<version>0.5.5-alpha</version>
 	<packaging>jar</packaging>
 	<name>grappaExemplo</name>
 	<description>Exemplo de sistema utilizando framework Grappa.</description>
@@ -11,7 +11,7 @@
 		<dependency>
 			<groupId>org.entrementes</groupId>
 			<artifactId>grappa</artifactId>
-			<version>0.5.2-alpha</version>
+			<version>0.5.5-alpha</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.mail</groupId>
