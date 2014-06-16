@@ -2,21 +2,24 @@ package br.com.caelum.grappaExemplo;
 
 import org.entrementes.grappa.contexto.ContextoDesktop;
 import org.entrementes.grappa.contexto.ContextoGrappa;
-import org.entrementes.grappa.modelo.instrucao.InstrucaoGPIO;
-
-import br.com.caelum.grappaExemplo.servico.ControleAcesso;
+import org.entrementes.grappa.gpio.Raspberry;
+import org.entrementes.grappa.modelo.instrucao.InstrucaoDigital;
 
 public class Aplicacao {
 
+	private static Raspberry PI;
+	
 	public static void main(String[] args) {
-		ContextoGrappa contexto = new ContextoDesktop();
-		ControleAcesso dispositivo = (ControleAcesso) contexto.getDispositivos().get("controle-acesso");
-		System.out.println(dispositivo.getContador() + " entrada(s) autorizada(s).");
+		iniciarHardware();
 		// InstrucaoGrappa requisicao = new InstrucaoGrappa(2, Conexao.GPIO,TipoAcao.ESCRITA, 1);
-		contexto.processarInstrucao(new InstrucaoGPIO().endereco(2).escrever(1)); // Abriu
+		PI.processarInstrucao(new InstrucaoDigital().endereco(2).escrever(1)); // Abriu
 		// InstrucaoGrappa requisicao = new InstrucaoGrappa(2, Conexao.GPIO,TipoAcao.ESCRITA, 0);
-		contexto.processarInstrucao(new InstrucaoGPIO().endereco(2).escrever(0)); // Fechou
-		System.out.println(dispositivo.getContador() + " entrada(s) autorizada(s).");
+		PI.processarInstrucao(new InstrucaoDigital().endereco(2).escrever(0)); // Fechou
+	}
+	
+	public static void iniciarHardware(){
+		ContextoGrappa contexto = new ContextoDesktop();
+		PI = contexto.getImplementacao();
 	}
 
 }

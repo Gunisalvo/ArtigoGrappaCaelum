@@ -10,11 +10,11 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import org.entrementes.grappa.dispositivo.Dispositivo;
-import org.entrementes.grappa.gpio.ObservadorGpio;
+import org.entrementes.grappa.gpio.ServicoGpio;
+import org.entrementes.grappa.marcacao.ObservadorGpio;
 
-@Dispositivo(nome = "controle-acesso")// 2
-public class ControleAcesso {
+@ObservadorGpio(endereco = 2)// 2
+public class ControleAcesso implements ServicoGpio{
 
 	private Integer contador = 0;
 	
@@ -22,12 +22,8 @@ public class ControleAcesso {
 	private final String SENHA_GMAIL = "sua senha Gmail";
 	private final String EMAIL_GMAIL = "seu email Gmail";
 	private final String EMAIL_DESTINO = "email notificado";
-
-	public Integer getContador() {
-		return contador;
-	}
 	
-	@ObservadorGpio(endereco = 2)
+	@Override
 	public void processarServico(Integer estadoPino) { // 3
 		System.out.println("processando evento eletrico.");
 		
