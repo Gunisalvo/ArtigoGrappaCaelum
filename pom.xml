@@ -3,15 +3,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.caelum</groupId>
 	<artifactId>grappaExemplo</artifactId>
-	<version>0.5.5-alpha</version>
+	<version>0.6.3</version>
 	<packaging>jar</packaging>
 	<name>grappaExemplo</name>
 	<description>Exemplo de sistema utilizando framework Grappa.</description>
 	<dependencies>
 		<dependency>
-			<groupId>org.entrementes</groupId>
+			<groupId>br.com.caelum</groupId>
 			<artifactId>grappa</artifactId>
-			<version>0.5.5-alpha</version>
+			<version>0.6.3</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.mail</groupId>

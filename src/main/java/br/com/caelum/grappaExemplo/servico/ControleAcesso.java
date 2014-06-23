@@ -1,15 +1,15 @@
 package br.com.caelum.grappaExemplo.servico; // 1
 
-import org.entrementes.grappa.gpio.ServicoGpio;
-import org.entrementes.grappa.marcacao.ObservadorGpio;
+import br.com.caelum.grappa.annotation.PinListener;
+import br.com.caelum.grappa.pin.PinService;
 
-@ObservadorGpio(endereco = 2)// 2
-public class ControleAcesso implements ServicoGpio{
+@PinListener(addresses = 2)// 2
+public class ControleAcesso implements PinService{
 
 	private Integer contador = 0;
 	
 	@Override
-	public void processarServico(Integer estadoPino) { // 3
+	public void processEvent(Integer estadoPino) { // 3
 		System.out.println("processando evento eletrico.");
 		
 		if (estadoPino.intValue() == 1) { // 4
